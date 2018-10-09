@@ -22,7 +22,7 @@ const OptionValuesStruct = (props) => {
                             Loan Size
                         </Col>
                         <Col xs={8} sm={7}>
-                            <Input type="text"/>
+                            <Input onBlur={evt => props.validateLoanValue(evt)} type="text"/>
                         </Col>
                     </FormGroup>
                     <br/>
@@ -31,7 +31,7 @@ const OptionValuesStruct = (props) => {
                             Credit Score
                         </Col>
                         <Col xs={8} sm={7}>
-                            <Input type="text"/>
+                            <Input onBlur={evt => props.validateCreditValue(evt)} type="text"/>
                         </Col>
                     </FormGroup>
                 </Col>
@@ -41,7 +41,7 @@ const OptionValuesStruct = (props) => {
                             Property Type
                         </Col>
                         <Col xs={8} sm={7}>
-                            <Input type="select">
+                            <Input onBlur={evt => props.setPropertyType(evt)} type="select">
                                 <option value="SingleFamily">Single Family</option>
                                 <option value="Condo">Condo</option>
                                 <option value="Townhouse">Townhouse</option>
@@ -55,7 +55,7 @@ const OptionValuesStruct = (props) => {
                             Occupancy
                         </Col>
                         <Col xs={8} sm={7}>
-                            <Input type="select">
+                            <Input onBlur={evt => props.setOccupancy(evt)} type="select">
                                 <option value="Primary">Primary</option>
                                 <option value="Secondary">Secondary</option>
                                 <option value="Investment">Investment</option>
