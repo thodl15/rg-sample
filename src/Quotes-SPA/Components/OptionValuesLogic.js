@@ -34,10 +34,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 // ----------------------------------------------------------------------------
 // Module Exports:
 class OptionValuesLogic extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.state ={
+            loanSize:     0,
+            creditScore:  0,
+            propertyType: "SingleFamily",
+            occupancy:    "Primary",
+        }
+    }
+
     render() {
         return (
             <OptionValuesStruct
-
             />
         )
     }
