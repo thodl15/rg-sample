@@ -9,7 +9,7 @@ import React from 'react';
 // Component Imports:
 
 // React-Bootstrap Imports:
-import {Row, Col, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
+import {Row, Col, Form, FormGroup, Input} from 'reactstrap';
 
 
 const OptionValuesStruct = (props) => {

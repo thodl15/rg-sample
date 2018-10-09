@@ -2,9 +2,6 @@ import React from 'react';
 
 import BootstrapTable from 'react-bootstrap-table-next';
 
-import Col from 'react-bootstrap/lib/Col';
-import Row from 'react-bootstrap/lib/Row';
-
 const products = [ {
     lenderName: "TFB Federal",
     loanType: "10/1 ARM",
