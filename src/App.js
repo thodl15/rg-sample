@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import OptionActionsStruct from './Quotes-SPA/Components/OptionActionsStruct';
-import OptionValuesStruct  from './Quotes-SPA/Components/OptionValuesStruct';
-import QuoteTableStruct from './Quotes-SPA/Components/QuoteTableStruct';
+import OptionActionsLogic from './Quotes-SPA/Components/OptionActionsLogic';
+import OptionValuesLogic  from './Quotes-SPA/Components/OptionValuesLogic';
+import QuoteTableLogic    from './Quotes-SPA/Components/QuoteTableLogic';
 
 import {Container} from 'reactstrap';
 
@@ -22,10 +22,10 @@ class App extends Component {
               2.A TableObject
         */}
         <Container>
-          <OptionValuesStruct/>
-          <OptionActionsStruct/>
+          <OptionValuesLogic/>
+          <OptionActionsLogic/>
           <br/>
-          <QuoteTableStruct/>
+          <QuoteTableLogic/>
         </Container>
       </div>
     );
