@@ -47,9 +47,9 @@ class OptionActionsLogic extends React.Component {
     }
 }
 
-const OptionActionsRedux = connect(
+const OptionActionsStore = connect(
     mapStateToProps,
     mapDispatchToProps
 )(OptionActionsLogic);
 
-export default OptionActionsRedux;
+export default OptionActionsStore;

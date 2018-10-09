@@ -40,9 +40,9 @@ class QuoteTableLogic extends React.Component {
     }
 }
 
-const QuoteTableRedux = connect(
+const QuoteTableStore = connect(
     mapStateToProps,
     mapDispatchToProps
 )(QuoteTableLogic);
 
-export default QuoteTableRedux;
+export default QuoteTableStore;
