@@ -2,6 +2,8 @@ import React from 'react';
 
 import BootstrapTable from 'react-bootstrap-table-next';
 
+// Sample Content for testing functionality.
+// Left in to show the table setup on static data.
 const products = [ {
     lenderName: "TFB Federal",
     loanType: "10/1 ARM",
@@ -18,6 +20,9 @@ const products = [ {
     apr: 4.375
 } ];
 
+// Table Column Definitions:
+// dataField - what attribute it should display
+// text      - what should display in the column header
 const columns = [{
     dataField: 'lenderName',
     text: 'Lender'

@@ -37,12 +37,11 @@ class OptionValuesLogic extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.validateLoanValue  = this.validateLoanValue.bind(this);
+        //Binding function scope to the given object:
+        this.validateLoanValue   = this.validateLoanValue.bind(this);
         this.validateCreditValue = this.validateCreditValue.bind(this);
         this.setPropertyType     = this.setPropertyType.bind(this);
         this.setOccupancy        = this.setOccupancy.bind(this);
-
-
 
         this.state ={
             loanSize:     0,
@@ -52,6 +51,9 @@ class OptionValuesLogic extends React.Component {
         }
     }
 
+    // The four following functions handle validation
+    // (if necessary) and store updating for the four
+    // current parameters.
     validateLoanValue(evt) {
         let amnt = parseInt(evt.target.value);
         if(isNaN(amnt) || amnt <= 0) {
@@ -109,6 +111,7 @@ class OptionValuesLogic extends React.Component {
             occupancy: evt.target.value,
         });
     }
+    
 
     render() {
         return (

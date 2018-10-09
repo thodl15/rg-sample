@@ -41,6 +41,7 @@ class OptionActionsLogic extends React.Component {
     constructor(props, context) {
         super(props, context);
 
+        //Binding functions to the scope of the given object.
         this.printStoreProps = this.printStoreProps.bind(this);
     }
 

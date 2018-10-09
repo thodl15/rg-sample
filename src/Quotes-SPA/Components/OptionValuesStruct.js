@@ -16,6 +16,7 @@ const OptionValuesStruct = (props) => {
     return (
         <Form>
             <Row form>
+                {/* First Parameter Column */}
                 <Col xs={12} sm={6}>
                     <FormGroup row>
                         <Col xs={4} sm={4}>
@@ -35,6 +36,8 @@ const OptionValuesStruct = (props) => {
                         </Col>
                     </FormGroup>
                 </Col>
+                
+                {/* Second Parameter Column */}
                 <Col xs={12} sm={6}>
                     <FormGroup row>
                         <Col xs={4} sm={5}>
