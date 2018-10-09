@@ -8,7 +8,7 @@ import paramsState from './Quotes-SPA/Redux/Reducers/QuoteReducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import OptionActionsLogic from './Quotes-SPA/Components/OptionActionsLogic';
+import OptionActionsStore from './Quotes-SPA/Components/OptionActionsLogic';
 import OptionValuesStore  from './Quotes-SPA/Components/OptionValuesLogic';
 import QuoteTableLogic    from './Quotes-SPA/Components/QuoteTableLogic';
 
@@ -31,7 +31,7 @@ class App extends Component {
           */}
           <Container>
             <OptionValuesStore/>
-            <OptionActionsLogic/>
+            <OptionActionsStore/>
             <br/>
             <QuoteTableLogic/>
           </Container>
