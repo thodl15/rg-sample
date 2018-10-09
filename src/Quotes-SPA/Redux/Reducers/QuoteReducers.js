@@ -11,8 +11,8 @@ import { CHANGE_QUOTE_PARAMS,
 const initialState = {
     loanSize:     0,
     creditScore:  0,
-    propertyType: SingleFamily,
-    occupancy:    Primary,
+    propertyType: "SingleFamily",
+    occupancy:    "Primary",
     quoteList:    [],
 }
 
