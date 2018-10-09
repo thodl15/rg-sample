@@ -42,13 +42,6 @@ class OptionActionsLogic extends React.Component {
         super(props, context);
 
         this.printStoreProps = this.printStoreProps.bind(this);
-
-        this.state = {
-            loanSize:     0,
-            creditScore:  0,
-            propertyType: "SingleFamily",
-            occupany:     "Primary",
-        }
     }
 
     printStoreProps() {
