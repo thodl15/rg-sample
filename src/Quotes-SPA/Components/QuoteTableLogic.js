@@ -4,13 +4,33 @@
 // React Imports:
 import React from 'react';
 
+// React-Redux Imports:
+import { connect } from 'react-redux';
+
 // Structure Import:
 import QuoteTableStruct from './QuoteTableStruct';
 
 
 // ----------------------------------------------------------------------------
+// Utility Functions & Constants:
+
+// React-Redux Action & Dispatch Functions:
+const mapStateToProps = (state, ownProps) => {
+    return {
+        quoteList: state.quoteList,
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+
+    }
+}
+
+
+// ----------------------------------------------------------------------------
 // Module Exports:
-export default class QuoteTableLogic extends React.Component {
+class QuoteTableLogic extends React.Component {
     render() {
         return (
             <QuoteTableStruct
@@ -19,3 +39,10 @@ export default class QuoteTableLogic extends React.Component {
         )
     }
 }
+
+const QuoteTableRedux = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(QuoteTableLogic);
+
+export default QuoteTableRedux;
