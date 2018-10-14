@@ -50,8 +50,8 @@ function attemptStoreUpdateWithResult(objProps) {
         return attemptAPIfetch(objProps).then(
             res => {
                 console.log(res.json());
-                //console.log(res.body.rateQuotes);
-                //getQuoteList(res.body.rateQuotes);
+                console.log(res.body.rateQuotes);
+                getQuoteList(res.body.rateQuotes);
             },
             error => printError(error)
         );
