@@ -18,7 +18,7 @@ const OptionActionsStruct = (props) => {
                 
             </Col>
             <Col xs={8} sm={4}>
-                <Button onClick={props.printStoreProps} color="success" block size="lg">
+                <Button onClick={()=>{props.storeUpdate(props.params)}} color="success" block size="lg">
                     Quote Rates
                 </Button>
             </Col>
