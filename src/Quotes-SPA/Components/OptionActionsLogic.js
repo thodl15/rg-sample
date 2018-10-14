@@ -23,7 +23,7 @@ import OptionActionsStruct from './OptionActionsStruct';
 const api_url = "https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes";
 
 //NOTE:
-//REMOVE THIS VALUE ANY TIME THAT I AM PUSH UPDATES TO THE REPO:
+//REMOVE THIS VALUE ANY TIME THAT I AM PUSHING UPDATES TO THE REPO:
 const rg_auth = "THIS_IS_THE_REPO_VALUE_WILL_NOT_WORK";
 
 function attemptAPIfetch(objProps) {
