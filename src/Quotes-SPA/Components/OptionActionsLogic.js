@@ -30,7 +30,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         sendQuotesToStore: listObj => {
             dispatch(getQuoteList(listObj))
-        }
+        },
+        asyncListUpdate: (objProps) => {
+            console.log(objProps);
+            dispatch(attemptStoreUpdateWithResult(objProps))
+        },
     }
 }
 
