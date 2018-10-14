@@ -5,9 +5,14 @@
 import React, { Component } from 'react';
 
 // React-Redux Imports:
-import { createStore } from 'redux';
-import { Provider    } from 'react-redux';
-import paramsState     from './Quotes-SPA/Redux/Reducers/QuoteReducers';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider                     } from 'react-redux';
+
+import paramsState  from './Quotes-SPA/Redux/Reducers/QuoteReducers';
+
+//Redux-Thunk Imports:
+import thunk from 'redux-thunk';
+
 
 // Style Imports:
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +26,10 @@ import QuoteTableLogic    from './Quotes-SPA/Components/QuoteTableLogic';
 import { Container      } from 'reactstrap';
 
 // Redux store initialization:
-const store = createStore(paramsState);
+const store = createStore(
+  paramsState,
+  applyMiddleware(thunk),
+);
 
 class App extends Component {
   render() {
