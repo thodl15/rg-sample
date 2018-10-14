@@ -24,7 +24,7 @@ const api_url = "https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quo
 
 //NOTE:
 //REMOVE THIS VALUE ANY TIME THAT I AM PUSHING UPDATES TO THE REPO:
-const rg_auth = "THIS_IS_THE_REPO_VALUE_WILL_NOT_WORK";
+const rg_auth = "";
 
 function attemptAPIfetch(objProps) {
     // Given that the information from the application
@@ -95,8 +95,7 @@ class OptionActionsLogic extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        //Binding functions to the scope of the given object.
-        this.printStoreProps = this.printStoreProps.bind(this);
+        
     }
 
     render() {
