@@ -16,15 +16,58 @@ import OptionActionsStruct from './OptionActionsStruct';
 // ----------------------------------------------------------------------------
 // Utility Functions & Constants:
 
+
+
+function attemptAPIfetch(objProps) {
+    // Given that the information from the application
+    // isn't identifiable to a given user, we could
+    // still pass the information directly as params
+    // within the URL string and be compliant with GDPR.
+
+    console.log("Display API fetch");
+    return fetch(api_url + "?" +
+            "loanSize="      + objProps.loanSize     +
+            "&creditScore="  + objProps.creditScore  +
+            "&propertyType=" + objProps.propertyType +
+            "&occupancy="    + objProps.occupancy,   {
+        headers: {
+                Authorization : "RG-AUTH " + rg_auth,
+        }
+    });
+}
+
+function attemptStoreUpdateWithResult(objProps) {
+    console.log("Display Store Update Attempt");
+    return function () {
+        return attemptAPIfetch(objProps).then(
+            res => {
+                console.log(res.json());
+                //console.log(res.body.rateQuotes);
+                //getQuoteList(res.body.rateQuotes);
+            },
+            error => printError(error)
+        );
+    };
+}
+
+function printError(error) {
+    console.log("Temporary Error Message Handling.");
+    console.log(error);
+}
+
+
 // React-Redux Action & Dispatch Functions:
 const mapStateToProps = (state, ownProps) => {
     return {
-        loanSize:     state.loanSize,
-        creditScore:  state.creditScore,
-        propertyType: state.propertyType,
-        occupancy:    state.occupancy,
+        quoteParams: {
+            loanSize:     state.loanSize,
+            creditScore:  state.creditScore,
+            propertyType: state.propertyType,
+            occupancy:    state.occupancy,
+        },
     }
 }
+
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
@@ -52,7 +95,9 @@ class OptionActionsLogic extends React.Component {
     render() {
         return (
             <OptionActionsStruct
-                printStoreProps = {this.printStoreProps}
+                printStoreProps = { this.printStoreProps       }
+                storeUpdate     = { this.props.asyncListUpdate }
+                params          = { this.props.quoteParams     }
             />
         )
     }
