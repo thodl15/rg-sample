@@ -10,7 +10,7 @@ import { CHANGE_QUOTE_PARAMS,
 // Utility Functions & Constants:
 const initialState = {
     loanSize:     0,
-    creditScore:  0,
+    creditScore:  300,
     propertyType: "SingleFamily",
     occupancy:    "Primary",
     quoteList:    [],

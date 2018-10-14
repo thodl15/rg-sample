@@ -45,7 +45,7 @@ class OptionValuesLogic extends React.Component {
 
         this.state ={
             loanSize:     0,
-            creditScore:  0,
+            creditScore:  300,
             propertyType: "SingleFamily",
             occupancy:    "Primary",
         }
@@ -56,7 +56,7 @@ class OptionValuesLogic extends React.Component {
     // current parameters.
     validateLoanValue(evt) {
         let amnt = parseInt(evt.target.value);
-        if(isNaN(amnt) || amnt <= 0) {
+        if(isNaN(amnt) || amnt <= 300) {
             console.log("Not a valid loan amount.");
         } else {
             this.setState({
