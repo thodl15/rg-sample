@@ -45,11 +45,6 @@ class OptionActionsLogic extends React.Component {
         this.printStoreProps = this.printStoreProps.bind(this);
     }
 
-    printStoreProps() {
-        console.log(this.props);
-    }
-    
-
     render() {
         return (
             <OptionActionsStruct
