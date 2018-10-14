@@ -11,9 +11,9 @@ export function changeQuoteParams(paramsObj) {
     }
 }
 
-export function getQuoteList(fetchRes) {
+export function getQuoteList(list) {
     return {
         type: GET_QUOTE_LIST,
-        quoteList: fetchRes.quoteList,
+        quoteList: list,
     }
 }
