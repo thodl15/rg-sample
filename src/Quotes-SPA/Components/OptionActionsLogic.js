@@ -22,6 +22,10 @@ import OptionActionsStruct from './OptionActionsStruct';
 // assignment, I am just declaring them here:
 const api_url = "https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes";
 
+//NOTE:
+//REMOVE THIS VALUE ANY TIME THAT I AM PUSH UPDATES TO THE REPO:
+const rg_auth = "THIS_IS_THE_REPO_VALUE_WILL_NOT_WORK";
+
 function attemptAPIfetch(objProps) {
     // Given that the information from the application
     // isn't identifiable to a given user, we could
