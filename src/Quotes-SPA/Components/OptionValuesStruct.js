@@ -12,6 +12,8 @@ import React from 'react';
 import {Row, Col, Form, FormGroup, Input} from 'reactstrap';
 
 
+// ----------------------------------------------------------------------------
+// Module Exports:
 const OptionValuesStruct = (props) => {
     return (
         <Form>
@@ -46,9 +48,9 @@ const OptionValuesStruct = (props) => {
                         <Col xs={8} sm={7}>
                             <Input onBlur={evt => props.setPropertyType(evt)} type="select">
                                 <option value="SingleFamily">Single Family</option>
-                                <option value="Condo">Condo</option>
-                                <option value="Townhouse">Townhouse</option>
-                                <option value="MultiFamily">Multi-Family</option>
+                                <option value="Condo"       >Condo        </option>
+                                <option value="Townhouse"   >Townhouse    </option>
+                                <option value="MultiFamily" >Multi-Family </option>
                             </Input>
                         </Col>
                     </FormGroup>
@@ -59,8 +61,8 @@ const OptionValuesStruct = (props) => {
                         </Col>
                         <Col xs={8} sm={7}>
                             <Input onBlur={evt => props.setOccupancy(evt)} type="select">
-                                <option value="Primary">Primary</option>
-                                <option value="Secondary">Secondary</option>
+                                <option value="Primary"   >Primary   </option>
+                                <option value="Secondary" >Secondary </option>
                                 <option value="Investment">Investment</option>
                             </Input>
                         </Col>

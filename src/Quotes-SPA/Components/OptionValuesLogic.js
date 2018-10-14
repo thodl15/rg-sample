@@ -5,7 +5,7 @@
 import React from 'react';
 
 // React-Redux Imports:
-import { connect } from 'react-redux';
+import { connect           } from 'react-redux';
 import { changeQuoteParams } from '../Redux/Actions/ActionTypes';
 
 // Structure Import:
@@ -61,13 +61,13 @@ class OptionValuesLogic extends React.Component {
         } else {
             this.setState({
                 loanSize: amnt,
-            })
+            });
             this.props.sendQuoteParamsToStore({
-                loanSize: amnt,
-                creditScore: this.state.creditScore,
+                loanSize:     amnt,
+                creditScore:  this.state.creditScore,
                 propertyType: this.state.propertyType,
-                occupancy: this.state.occupancy,
-            })
+                occupancy:    this.state.occupancy,
+            });
         }
     }
 
@@ -78,12 +78,12 @@ class OptionValuesLogic extends React.Component {
         } else {
             this.setState({
                 creditScore: value,
-            })
+            });
             this.props.sendQuoteParamsToStore({
-                loanSize: this.state.loanSize,
-                creditScore: value,
+                loanSize:     this.state.loanSize,
+                creditScore:  value,
                 propertyType: this.state.propertyType,
-                occupancy: this.state.occupancy,
+                occupancy:    this.state.occupancy,
             });
         }
     }
@@ -91,24 +91,24 @@ class OptionValuesLogic extends React.Component {
     setPropertyType(evt) {
         this.setState({
             propertyType: evt.target.value,
-        })
+        });
         this.props.sendQuoteParamsToStore({
-            loanSize: this.state.loanSize,
-            creditScore: this.state.creditScore,
+            loanSize:     this.state.loanSize,
+            creditScore:  this.state.creditScore,
             propertyType: evt.target.value,
-            occupancy: this.state.occupancy,
+            occupancy:    this.state.occupancy,
         });
     }
 
     setOccupancy(evt) {
         this.setState({
             occupancy: evt.target.value,
-        })
+        });
         this.props.sendQuoteParamsToStore({
-            loanSize: this.state.loanSize,
-            creditScore: this.state.creditScore,
+            loanSize:     this.state.loanSize,
+            creditScore:  this.state.creditScore,
             propertyType: this.state.propertyType,
-            occupancy: evt.target.value,
+            occupancy:    evt.target.value,
         });
     }
     
@@ -116,10 +116,10 @@ class OptionValuesLogic extends React.Component {
     render() {
         return (
             <OptionValuesStruct
-                validateLoanValue   = {this.validateLoanValue}
-                validateCreditValue = {this.validateCreditValue}
-                setPropertyType     = {this.setPropertyType}
-                setOccupancy        = {this.setOccupancy}
+                validateLoanValue   = { this.validateLoanValue   }
+                validateCreditValue = { this.validateCreditValue }
+                setPropertyType     = { this.setPropertyType     }
+                setOccupancy        = { this.setOccupancy        }
             />
         )
     }

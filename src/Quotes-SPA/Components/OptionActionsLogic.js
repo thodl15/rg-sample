@@ -32,39 +32,36 @@ function attemptAPIfetch(objProps) {
     // still pass the information directly as params
     // within the URL string and be compliant with GDPR.
 
-    console.log("Display API fetch");
     return fetch(api_url + "?" +
-            "loanSize="      + objProps.loanSize     +
-            "&creditScore="  + objProps.creditScore  +
-            "&propertyType=" + objProps.propertyType +
-            "&occupancy="    + objProps.occupancy,   {
-        headers: {
+        "loanSize="      + objProps.loanSize     +
+        "&creditScore="  + objProps.creditScore  +
+        "&propertyType=" + objProps.propertyType +
+        "&occupancy="    + objProps.occupancy    , {
+            headers: {
                 Authorization : "RG-AUTH " + rg_auth,
+            }
         }
-    });
+    );
 }
 
 function attemptStoreUpdateWithResult(objProps) {
-    console.log("Display Store Update Attempt");
-    return function () {
+    return function (dispatch) {
         return attemptAPIfetch(objProps).then(
             res => res.json()
         ).then(data => {
-            console.log(data);
-            console.log(data.rateQuotes);
-            getQuoteList(data.rateQuotes);
+            dispatch(getQuoteList(data.rateQuotes));
         }).catch(error => printError(error));
     };
 }
 
 function printError(error) {
-    console.log("Temporary Error Message Handling.");
+    console.log("There was an error, see message below:");
     console.log(error);
 }
 
 
 // React-Redux Action & Dispatch Functions:
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         quoteParams: {
             loanSize:     state.loanSize,
@@ -75,14 +72,13 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         sendQuotesToStore: listObj => {
             dispatch(getQuoteList(listObj))
         },
         asyncListUpdate: (objProps) => {
-            console.log(objProps);
-            dispatch(attemptStoreUpdateWithResult(objProps))
+            dispatch(attemptStoreUpdateWithResult(objProps));
         },
     }
 }
@@ -91,12 +87,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 // ----------------------------------------------------------------------------
 // Module Exports:
 class OptionActionsLogic extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-
-        
-    }
-
     render() {
         return (
             <OptionActionsStruct
