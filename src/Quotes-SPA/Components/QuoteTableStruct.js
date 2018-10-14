@@ -7,22 +7,27 @@ import BootstrapTable from 'react-bootstrap-table-next';
 // text      - what should display in the column header
 const columns = [{
     dataField: 'lenderName',
-    text: 'Lender'
+    text:      'Lender'
 }, {
     dataField: 'loanType',
-    text: 'Product'
+    text:      'Product',
+    sort:      true
 }, {
     dataField: 'interestRate',
-    text: 'Rate'
+    text:      'Rate',
+    sort:      true
 }, {
     dataField: 'closingCosts',
-    text: 'Closing Costs'
+    text:      'Closing Costs',
+    sort:      true
 }, {
     dataField: 'monthlyPayment',
-    text: 'Monthly Payment'
+    text:      'Monthly Payment',
+    sort:      true
 }, {
     dataField: 'apr',
-    text: 'APR'
+    text:      'APR',
+    sort:      true
 }];
 
 const QuoteTableStruct = (props) => {
