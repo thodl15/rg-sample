@@ -34,7 +34,7 @@ class QuoteTableLogic extends React.Component {
     render() {
         return (
             <QuoteTableStruct
-
+                tableContent = { this.props.quoteList }
             />
         )
     }
