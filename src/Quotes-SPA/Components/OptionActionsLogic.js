@@ -48,13 +48,12 @@ function attemptStoreUpdateWithResult(objProps) {
     console.log("Display Store Update Attempt");
     return function () {
         return attemptAPIfetch(objProps).then(
-            res => {
-                console.log(res.json());
-                console.log(res.body.rateQuotes);
-                getQuoteList(res.body.rateQuotes);
-            },
-            error => printError(error)
-        );
+            res => res.json()
+        ).then(data => {
+            console.log(data);
+            console.log(data.rateQuotes);
+            getQuoteList(data.rateQuotes);
+        }).catch(error => printError(error));
     };
 }
 
