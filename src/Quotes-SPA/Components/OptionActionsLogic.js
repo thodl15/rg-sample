@@ -16,7 +16,11 @@ import OptionActionsStruct from './OptionActionsStruct';
 // ----------------------------------------------------------------------------
 // Utility Functions & Constants:
 
-
+// Ideally, you would want these following variables
+// as environment variables instead, but for the sake
+// of expediting the completion of the sample
+// assignment, I am just declaring them here:
+const api_url = "https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes";
 
 function attemptAPIfetch(objProps) {
     // Given that the information from the application
@@ -67,7 +71,6 @@ const mapStateToProps = (state, ownProps) => {
         },
     }
 }
-
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
