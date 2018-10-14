@@ -34,10 +34,12 @@ const QuoteTableStruct = (props) => {
     return (
         <BootstrapTable
             hover
-            condensed={true}
-            keyField='lenderName' 
-            data={ props.tableContent } 
-            columns={ columns } />);
+            condensed        = { true               }
+            keyField         = 'lenderName' 
+            data             = { props.tableContent } 
+            columns          = { columns            } 
+            noDataIndication = { props.noDataMsg    }
+            />);
 }
 
 export default QuoteTableStruct;

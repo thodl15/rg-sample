@@ -14,6 +14,10 @@ import QuoteTableStruct from './QuoteTableStruct';
 // ----------------------------------------------------------------------------
 // Utility Functions & Constants:
 
+function noDataFound() {
+    return "No entries have been found that matched the given criteria.";
+}
+
 // React-Redux Action & Dispatch Functions:
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -35,7 +39,8 @@ class QuoteTableLogic extends React.Component {
         return (
             <QuoteTableStruct
                 tableContent = { this.props.quoteList }
-            />
+                noDataMsg    = { noDataFound          }
+                />
         )
     }
 }
